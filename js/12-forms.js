@@ -6,7 +6,13 @@ function handleSubmit(event) {
   event.preventDefault();
   const elements = event.currentTarget.elements;
 
-  console.log(elements.email.value);
-  //   console.log(elements.password);
-  //   console.log(elements.comment);
+  const info = {
+    email: elements.email.value,
+    password: elements.password.value,
+    comment: elements.comment.value,
+  };
+
+  console.log(info);
+
+  event.target.reset();
 }
