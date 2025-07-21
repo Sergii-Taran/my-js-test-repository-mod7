@@ -188,3 +188,82 @@ input[type='password'] {
 }
 
 /* ---------------------- */
+/* ------- task-6 ------- */
+
+#controls {
+  background-color: #f6f6fe;
+
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+input[type='number'] {
+  border: 1px solid #808080;
+  border-radius: 8px;
+  padding: 8px;
+  width: 200px;
+  height: 40px;
+
+  text-align: center;
+
+  background-color: transparent;
+
+  transition: border-color 0.3s;
+}
+
+input[type='number']:hover {
+  border-color: #000;
+}
+
+input[type='number']:focus {
+  border-color: #808080;
+  outline: none;
+}
+
+button[data-create] {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+
+  background-color: #4e75ff;
+  border: none;
+
+  cursor: pointer;
+
+  transition: border-color 0.3s;
+}
+
+button[data-create]:hover {
+  background-color: #6c8cff;
+}
+
+button[data-destroy] {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 120px;
+  height: 40px;
+
+  background-color: #ff4e4e;
+  border: none;
+
+  cursor: pointer;
+
+  transition: border-color 0.3s;
+}
+
+button[data-destroy]:hover {
+  background-color: #ff7070;
+}
+
+#boxes {
+  background-color: #f6f6fe;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px;
+  gap: 44px;
+}
