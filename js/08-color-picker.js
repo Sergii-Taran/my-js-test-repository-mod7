@@ -20,7 +20,7 @@ const colorPickerContainerEl = document.querySelector('.color-picker');
 
 // colorPickerContainerEl.append(...elements);
 
-// ===============================
+// =============================== //
 
 // const createMarkup = (arr) => {
 //   return arr.map((option) => {
@@ -35,19 +35,33 @@ const colorPickerContainerEl = document.querySelector('.color-picker');
 
 // colorPickerContainerEl.append(...createMarkup(options));
 
-// ================================
+// ================================ //
 
-const createMarkup = (arr) => {
-  const elements = arr.map((item) => {
-    const btn = document.createElement('button');
-    btn.classList.add('color-picker_option');
-    btn.textContent = item.label;
-    btn.style.backgroundColor = item.color;
+// const createMarkup = (arr) => {
+//   const elements = arr.map((item) => {
+//     const btn = document.createElement('button');
+//     btn.classList.add('color-picker_option');
+//     btn.textContent = item.label;
+//     btn.style.backgroundColor = item.color;
 
-    return btn;
-  });
+//     return btn;
+//   });
 
-  return elements;
-};
+//   return elements;
+// };
 
-colorPickerContainerEl.append(...createMarkup(options));
+// colorPickerContainerEl.append(...createMarkup(options));
+
+// ================================ //
+
+const elements = options.map((option) => {
+  const btnEl = document.createElement('button');
+  btnEl.type = 'button';
+  btnEl.setAttribute('class', 'color-picker_option');
+  btnEl.textContent = option.label;
+  btnEl.style.backgroundColor = option.color;
+
+  return btnEl;
+});
+
+colorPickerContainerEl.append(...elements);
