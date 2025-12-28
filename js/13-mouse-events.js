@@ -1,14 +1,14 @@
 const box = document.querySelector('.js-box');
 
-// box.addEventListener('mouseenter', onMouseEnter);
-// box.addEventListener('mouseleave', onMouseLeave);
+box.addEventListener('mouseenter', onMouseEnter);
+box.addEventListener('mouseleave', onMouseLeave);
 
-// function onMouseEnter() {
-//   console.log('onMouseEnter');
-// }
-// function onMouseLeave() {
-//   console.log('onMouseLeave');
-// }
+function onMouseEnter() {
+  console.log('onMouseEnter');
+}
+function onMouseLeave() {
+  console.log('onMouseLeave');
+}
 
 // =============================
 
@@ -25,8 +25,8 @@ const box = document.querySelector('.js-box');
 
 // ===========================
 
-box.addEventListener('mousemove', onMouseMove);
+// box.addEventListener('mousemove', onMouseMove);
 
-function onMouseMove(event) {
-  console.log(event);
-}
+// function onMouseMove(event) {
+//   console.log(event);
+// }
