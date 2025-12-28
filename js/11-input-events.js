@@ -24,7 +24,20 @@ const userName = document.querySelector('.js-user-name');
 
 userName.addEventListener('blur', handleBlur);
 
+// function handleBlur(event) {
+//   const name = event.target.value;
+//   alert(`Hello, ${name}!`);
+// }
+
+// -------------------- //
+
 function handleBlur(event) {
-  const name = event.target.value;
-  alert(`Hello, ${name}!`);
+  if (event.target.value.trim() === '') {
+    alert('Missing chars');
+    return;
+  }
+
+  alert(`Welcome onboard, ${event.target.value}`);
+
+  event.target.value = '';
 }
