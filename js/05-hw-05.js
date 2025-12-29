@@ -14,3 +14,5 @@ btnEl.addEventListener('click', () => {
 
   spanEl.textContent = randomColor;
 });
+
+// --------------------- //

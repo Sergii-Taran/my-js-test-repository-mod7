@@ -39,3 +39,5 @@ function createMarkup(arr) {
 const galleryEl = document.querySelector('.gallery');
 
 galleryEl.insertAdjacentHTML('beforeend', createMarkup(images));
+
+// --------------------- //

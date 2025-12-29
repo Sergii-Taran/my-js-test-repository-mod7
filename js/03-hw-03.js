@@ -5,3 +5,5 @@ inputEl.addEventListener('input', () => {
   const inputName = inputEl.value.trim();
   outputEl.textContent = inputName === '' ? 'Anonymous' : inputName;
 });
+
+// --------------------- //
