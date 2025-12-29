@@ -25,6 +25,10 @@ const images = [
   },
 ];
 
+// --------------------- //
+
+const galleryEl = document.querySelector('.gallery');
+
 function createMarkup(arr) {
   return arr
     .map(
@@ -33,11 +37,7 @@ function createMarkup(arr) {
   <img src="${item.url}" alt="${item.alt}">
   </li>`
     )
-    .join();
+    .join('');
 }
 
-const galleryEl = document.querySelector('.gallery');
-
 galleryEl.insertAdjacentHTML('beforeend', createMarkup(images));
-
-// --------------------- //
