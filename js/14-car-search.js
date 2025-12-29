@@ -39,7 +39,7 @@ const cars = [
     car: 'Volvo',
     type: 'XC60',
     price: 7000,
-    img: 'https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320',
+    img: 'https://images.unsplash.com/photo-1629897048514-3dd7414fe72a?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
 
@@ -87,26 +87,25 @@ const cars = [
 const form = document.querySelector('.js-form');
 const container = document.querySelector('.js-list');
 
-function createMarkup(arr) {
+function createCarsMarkup(arr) {
   return arr
     .map(
       (car) => `
-    <li class="car-card" data-id="${car.id}">
-    <img src="${car.img}" alt="${car.type}" class="car-image">
-    <h2 class="car-title">${car.car}</h2>
-    <h3 class="car-type">${car.type}</h3>
-    <span class="car-price">${car.price}$</span>
-    
-    </li>  
-    `
+  <li>
+  <img src="${car.img}" alt="${car.type}" class="car-image">
+  <h2 class="car-title">${car.car}</h2>
+  <h3 class="car-type">${car.type}</h3>
+  <span class="car-price">${car.price}$</span>
+  </li>
+  `
     )
     .join('');
 }
 
 container.style.display = 'flex';
-container.style.flexWrap = 'wrap';
+container.style.wrap = 'wrap';
 container.style.gap = '25px';
-container.insertAdjacentHTML('beforeend', createMarkup(cars));
+container.insertAdjacentHTML('beforeend', createCarsMarkup(cars));
 
 form.addEventListener('submit', handleSubmit);
 
@@ -121,5 +120,5 @@ function handleSubmit(event) {
     item[option.value].toLowerCase().includes(query.value.toLowerCase())
   );
 
-  container.innerHTML = createMarkup(result);
+  container.innerHTML = createCarsMarkup(result);
 }
