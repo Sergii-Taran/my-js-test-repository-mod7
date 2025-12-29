@@ -27,17 +27,35 @@ const images = [
 
 // --------------------- //
 
+// const galleryEl = document.querySelector('.gallery');
+
+// function createMarkup(arr) {
+//   return arr
+//     .map(
+//       (item) => `
+//   <li>
+//   <img src="${item.url}" alt="${item.alt}">
+//   </li>`
+//     )
+//     .join('');
+// }
+
+// galleryEl.insertAdjacentHTML('beforeend', createMarkup(images));
+
+// --------------------- //
+
 const galleryEl = document.querySelector('.gallery');
 
-function createMarkup(arr) {
-  return arr
-    .map(
-      (item) => `
-  <li>
-  <img src="${item.url}" alt="${item.alt}">
-  </li>`
-    )
-    .join('');
-}
+const items = images.map(({ url, alt }) => {
+  const li = document.createElement('li');
+  const img = document.createElement('img');
 
-galleryEl.insertAdjacentHTML('beforeend', createMarkup(images));
+  img.src = url;
+  img.alt = alt;
+
+  li.append(img);
+
+  return li;
+});
+
+galleryEl.append(...items);
