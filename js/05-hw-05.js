@@ -48,12 +48,10 @@ const btnEl = document.querySelector('.change-color');
 const spanEl = document.querySelector('.color');
 const bodyEl = document.body;
 
-btnEl.addEventListener('click', handleClick);
-
-function handleClick() {
+btnEl.addEventListener('click', () => {
   const randomColor = getRandomHexColor();
 
   bodyEl.style.backgroundColor = randomColor;
 
   spanEl.textContent = randomColor;
-}
+});
