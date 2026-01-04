@@ -26,7 +26,7 @@ const films = [
   },
 ];
 
-const watchedFilms = ['film_2', 'film_4', 'film_5'];
+// const watchedFilms = ['film_2', 'film_4', 'film_5'];
 
 // function createMarkup(arr) {
 //   return arr
@@ -50,12 +50,42 @@ const watchedFilms = ['film_2', 'film_4', 'film_5'];
 
 // ====================================== //
 
+// function createMarkup(arr) {
+//   return arr
+//     .map(
+//       ({ title, imgUrl, id }) =>
+//         `
+//     <li class="film-item" data-id="${id}">
+//     <img src="${imgUrl}" alt="${title}">
+//     <p>${title}</p>
+//     </li>
+//     `
+//     )
+//     .join('');
+// }
+
+// const filmListEl = document.querySelector('.film-list');
+// filmListEl.insertAdjacentHTML('beforeend', createMarkup(films));
+
+// watchedFilms.forEach((id) => {
+//   const film = filmListEl.querySelector(`[data-id="${id}"]`);
+//   if (film) {
+//     film.style.opacity = '0.5';
+//   }
+// });
+
+// ====================================== //
+
+const watchedFilms = new Set(['film_2', 'film_4']);
+
+const filmListEl = document.querySelector('.film-grid-list');
+
 function createMarkup(arr) {
   return arr
     .map(
       ({ title, imgUrl, id }) =>
         `
-    <li class="film-item" data-id="${id}">
+    <li class="film-grid-item" data-id="${id}">
     <img src="${imgUrl}" alt="${title}">
     <p>${title}</p>
     </li>
@@ -64,18 +94,16 @@ function createMarkup(arr) {
     .join('');
 }
 
-const filmListEl = document.querySelector('.film-list');
+function markWatchedFilms(container, watchedSet) {
+  [...container.children].forEach((item) => {
+    const filmId = item.dataset.id;
+
+    if (watchedSet.has(filmId)) {
+      item.classList.add('watched');
+    }
+  });
+}
+
 filmListEl.insertAdjacentHTML('beforeend', createMarkup(films));
 
-watchedFilms.forEach((id) => {
-  const film = filmListEl.querySelector(`[data-id="${id}"]`);
-  if (film) {
-    film.style.opacity = '0.5';
-  }
-});
-
-// ====================================== //
-
-// const watchedFilms = new Set(['film_2', 'film_4']);
-
-// const filmListEl = document.querySelector('.film-list');
+markWatchedFilms(filmListEl, watchedFilms);
